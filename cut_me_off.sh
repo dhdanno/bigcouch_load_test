@@ -19,3 +19,12 @@ iptables -I OUTPUT 1 -d 74.114.208.8/32 -j ACCEPT
 iptables -I INPUT 1 -s 74.114.208.8/32 -j ACCEPT
 iptables -I OUTPUT 2 -d 74.114.208.0/21 -j DROP
 iptables -I INPUT 2 -s 74.114.208.0/21 -d 74.114.208.0/21 -j DROP
+
+# tor1 servers
+iptables -I OUTPUT 2 -d 104.193.16.172/32 -j DROP
+iptables -I OUTPUT 2 -d 104.193.16.132/32 -j DROP
+iptables -I INPUT 2 -s 104.193.16.172/32 -j DROP
+iptables -I INPUT 2 -s 104.193.16.132/32 -j DROP
+
+
+
