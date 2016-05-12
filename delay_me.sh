@@ -1,5 +1,6 @@
 #!/bin/bash
 
+IP=$1
 DELAY="200ms"
 VAR="100ms"
 
