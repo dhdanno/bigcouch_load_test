@@ -51,7 +51,7 @@ if [ $2 == "ATT" ]; then
 
   for i in `seq 1 $3`; do
         echo $i
-        RAND=$(echo `date` | md5sum | awk '{print $1}')
+        RAND=$(echo `date +%s%N` | md5sum | awk '{print $1}')
 
         curl -H "Content-Type: image/gif" -X PUT 'http://127.0.0.1:5984/account%2F00%2Fbb%2F0ae67239d8186941071e80f4e68a/ATTACHME'$RAND'/homer.gif' --data-binary @homer.gif
 
