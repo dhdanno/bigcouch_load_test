@@ -1,7 +1,7 @@
 #!/bin/bash
 # Go home BigCouch, You've had too much to drink
 
-TYPE="REJECT"
+TYPE="DROP"
 
 ## IMPORTANT ##
 # You must run this first WITHOUT an argument first and then apply the argument

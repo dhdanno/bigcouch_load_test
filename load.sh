@@ -1,6 +1,9 @@
 #!/bin/sh
 
-ACC="account%2F00%2Fbd%2F56f2037efc4e8f17b830d9a5cef0"
+DB="aapoo_base"
+DOC="1bb6a93fe9cd53e53dfa24bf0d00017e"
+HOST="media01.tor1.voxter.net"
+POST="15984"
 
 if [ ! $2 ]; then
   echo "Usage: $0 <server> <GET|PUT|ALL> <INT> ";
@@ -13,7 +16,7 @@ set -m # Enable Job Control
 # 30 * 10
 if [ $2 == "GET" ]; then
   for i in `seq 30`; do # start 30 jobs in parallel
-    curl -X GET http://127.0.0.1:5984/account%2F00%2F17%2F7c5838d8d2c0a75b31d6389bec72/9eaacb34dd7ccf5be97570405342b156?[1-$3]
+    curl -X GET http://127.0.0.1:5984/$DB/$DOC?[1-$3]
   done
 fi
 # Wait for all parallel jobs to finish
@@ -53,7 +56,7 @@ if [ $2 == "ATT" ]; then
         echo $i
         RAND=$(echo `date +%s%N` | md5sum | awk '{print $1}')
 
-        curl -H "Content-Type: image/gif" -X PUT 'http://127.0.0.1:5984/account%2F00%2Fbb%2F0ae67239d8186941071e80f4e68a/ATTACHME'$RAND'/homer.gif' --data-binary @homer.gif
+        curl -H "Content-Type: image/gif" -X PUT 'http://localhost:5984/account%2F00%2Fbb%2F0ae67239d8186941071e80f4e68a/ATTACHME'$RAND'/homer.gif' --data-binary @homer.gif
 
 
   done
