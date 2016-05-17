@@ -1,7 +1,10 @@
 #!/bin/bash
 # Go home BigCouch, You've had too much to drink
 
-TYPE="DROP"
+TYPE="REJECT"
+
+echo $TYPE
+#exit
 
 ## IMPORTANT ##
 # You must run this first WITHOUT an argument first and then apply the argument
