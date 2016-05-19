@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DB="aapoo_base"
+DB="aa_test_database"
 DOC="fce232d2f7d657d17f38b41fbe005b06"
 #HOST="media01.tor1.voxter.net"
 POST="15984"
